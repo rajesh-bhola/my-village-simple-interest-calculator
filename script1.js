@@ -70,9 +70,8 @@ function resetFields() {
     // Clear all input fields
     document.getElementById('principal').value = '';
     document.getElementById('rate').value = '';
-    document.getElementById('years').value = '';
-    document.getElementById('months').value = '';
-    document.getElementById('days').value = '';
+    document.getElementById('startDate').value = '';
+    document.getElementById('endDate').value = '';
     
     // Clear all result fields
     document.getElementById('displayPrincipal').innerText = '0 ଟଙ୍କା';
