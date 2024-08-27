@@ -25,13 +25,12 @@ function calculateInterest() {
     // Step 3: Calculate the total amount
     const totalAmount = principal + totalInterest;
 
-    // Display the results
-    document.getElementById('displayPrincipal').innerText = formatCurrency(principal.toFixed(2)) + " ଟଙ୍କା";
-    document.getElementById('displayInterest').innerText = formatCurrency(totalInterest.toFixed(2)) + " ଟଙ୍କା";
-    document.getElementById('displayYearlyInterest').innerText = formatCurrency((interestPerMonth * 12).toFixed(2)) + " ଟଙ୍କା";
-    document.getElementById('displayMonthlyInterest').innerText = formatCurrency(interestPerMonth.toFixed(2)) + " ଟଙ୍କା";
-    document.getElementById('displayDailyInterest').innerText = formatCurrency((interestPerMonth / 30).toFixed(2)) + " ଟଙ୍କା";
-    document.getElementById('displayTotal').innerText = formatCurrency(totalAmount.toFixed(2)) + " ଟଙ୍କା";
+    // Combine everything into a single line of text
+    const allText = `ମୂଳ ଧନ: ${formatCurrency(principal.toFixed(2))} ଟଙ୍କା | ସରଳ ସୁଧ: ${formatCurrency(totalInterest.toFixed(2))} ଟଙ୍କା | ବର୍ଷ କୁ ସୁଧ: ${formatCurrency((interestPerMonth * 12).toFixed(2))} ଟଙ୍କା | ମାସ କୁ ସୁଧ: ${formatCurrency(interestPerMonth.toFixed(2))} ଟଙ୍କା | ଦିନ କୁ ସୁଧ: ${formatCurrency((interestPerMonth / 30).toFixed(2))} ଟଙ୍କା`;
+
+    // Display the combined text in a single line
+    document.getElementById('displayAllText').innerText = allText;
+    document.getElementById('displayTotal').innerText = formatCurrency(totalAmount.toFixed(2));
 }
 
 function resetFields() {

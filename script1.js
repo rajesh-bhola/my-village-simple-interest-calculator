@@ -30,10 +30,10 @@ function calculateInterest() {
 
     if (months < 0) {
         years -= 1;
-        months += 12;
+        months += 12; 
     }
 
-    const dateDifferenceText = `${years} years ${months} months ${days} days`;
+    const dateDifferenceText = `${years} ବର୍ଷ  ${months} ମାସ ${days} ଦିନ`;
 
     // Convert rate from paisa to rupees
     const rateInRupees = rate / 100;
@@ -48,11 +48,17 @@ function calculateInterest() {
     // Step 3: Calculate the total amount
     const totalAmount = principal + totalInterest;
 
+    const principalText = formatCurrency(principal.toFixed(2));
+    const totalInterestText = formatCurrency(totalInterest.toFixed(2))
+
+    const allText = `ମୂଳ ଧନ: ${principalText} | ସରଳ ସୁଧ: ${totalInterestText} | ଦିନ: ${daysDifference}`;
+
+
     // Display the results
-    document.getElementById('displayPrincipal').innerText = formatCurrency(principal.toFixed(2));
-    document.getElementById('displayInterest').innerText = formatCurrency(totalInterest.toFixed(2));
-    document.getElementById('displayDuration').innerText = daysDifference;
+    
     document.getElementById('displayDateDifference').innerText = dateDifferenceText;
+    document.getElementById('displayAllText').innerText = allText;
+
 
     //document.getElementById('displayYears').innerText = years;
     //document.getElementById('displayMonths').innerText = months;
